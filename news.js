@@ -2,6 +2,11 @@ let cardCon = document.getElementById("cardCon");
 
 let xhr = new XMLHttpRequest();
 xhr.open("GET", `news.json`, "true");
+
+//You have to enter News api URL for getting latest news
+// URL = ` Enter the URL here  `;
+// xhr.open("GET", `${URL}`, "true");
+
 xhr.onload = function () {
   if (this.status === 200) {
     let json = JSON.parse(this.responseText).articles;
