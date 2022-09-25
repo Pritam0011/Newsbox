@@ -53,10 +53,10 @@ img {
   }
 }
 
-.Hover-effect:hover {
+.onHover:hover {
   transform: translateY(-3px) scale(1.01);
 }
-.Hover-effect:hover img {
+.onHover:hover img {
   transform: translateY(-5px) scale(1.02);
   box-shadow: 15px 15px 27px -20px rgba(0, 0, 0, 0.38);
   z-index: 500;
@@ -77,7 +77,7 @@ h2 {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 1rem;
 }
-.news-box {
+.newsbx {
   transition: all 0.3s;
   text-decoration: none;
   color: rgb(29, 25, 25);
@@ -87,7 +87,7 @@ h2 {
   border-radius: 15px;
 }
 
-.news-box:hover {
+.newsbx:hover {
   text-decoration: none;
   color: rgb(29, 25, 25);
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16), 0 3px 3px rgba(0, 0, 0, 0.23);

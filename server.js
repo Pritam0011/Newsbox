@@ -1,5 +1,4 @@
 const express = require("express");
-// const napi = new NewsAPI("6774a7a88fc0411c996360a4d2bea4a8");
 const app = express();
 const path = require("path");
 const http = require("http").createServer(app);
@@ -17,7 +16,3 @@ http.listen(port, () => {
 app.use(express.static(__dirname + "/view"));
 app.use(express.urlencoded({ extended: true }));
 app.use("/", require("./routes/index"));
-
-// app.get("/", (req, res) => {
-//   res.sendFile(__dirname + "/index.html");
-// });

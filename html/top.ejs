@@ -4,8 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>NewsBox</title>
+    <link rel="shortcut icon" href="/news.png" type="image/x-icon" />
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="/gl_back.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -20,7 +22,8 @@
   <body>
     <div id="preloader"></div>
     <button class="scroll-btn" onclick="topFunction()" id="myBtn">
-      <i class="fas fa-angle-up"></i>
+      <!-- <i class="fas fa-angle-up"></i> -->
+      <i class="fa-solid fa-arrow-up-from-arc"></i>
     </button>
     <div class="container-fluid m-0 p-0">
       <!-- navbar -->
@@ -40,12 +43,12 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navbar-nav">
                 <li class="nav-item">
                   <a
-                    class="nav-link"
+                    class="nav-link "
                     aria-current="page"
-                    href="/news/health"
+                    href="/health"
                     id="health"
                     >Health</a
                   >
@@ -54,28 +57,25 @@
                   <a
                     class="nav-link"
                     aria-current="page"
-                    href="/news/business"
+                    href="/business"
                     id="business"
                     >Business</a
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/news/sports" id="sport">Sports</a>
+                  <a class="nav-link" href="/sports" id="sport">Sports</a>
                 </li>
                 <li class="nav-item">
                   <a
                     class="nav-link"
                     aria-current="page"
-                    href="/news/technology"
+                    href="/technology"
                     id="technology"
                     >Technology</a
                   >
                 </li>
                 <li class="nav-item">
-                  <a
-                    class="nav-link"
-                    href="/news/entertainment"
-                    id="entertainment"
+                  <a class="nav-link" href="/entertainment" id="entertainment"
                     >Entertainment</a
                   >
                 </li>
@@ -87,6 +87,7 @@
                   id="newsQuery"
                   placeholder="Search news"
                   autocomplete="off"
+                  name="search"
                 />
                 <button
                   class="btn btn-outline-warning"
