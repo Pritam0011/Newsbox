@@ -23,15 +23,3 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
-var header = document.getElementById("navbar-nav");
-var btn = header.getElementsByClassName("nav-item");
-var btns = header.getElementsByClassName("nav-link");
-for (var i = 0; i < btn.length; i++) {
-  btn[i].addEventListener("click", function() {
-    console.log('cl');
-    
-  var current = document.getElementsByClassName("active");
-  current[0].className = current[0].className.replace(" active", "");
-  btns[i].className += "active";
-  });
-}
