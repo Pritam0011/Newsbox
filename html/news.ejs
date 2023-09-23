@@ -1,32 +1,70 @@
 <%- include("top.ejs") %>
 
-<body>
-  <div class="row m-3" id="newsType" style="color: white">
-    <h2><%=cate%></h2>
-  </div>
-  <div class="news-container">
-    <div class="news">
-      <% articles.forEach(function(article,index){ %> <% if ((typeof
-      article.url=='object') || (typeof article.title=='object') || (typeof
-      article.urlToImage=='object') || (typeof article.content=='object')){ %>
-      <% } else{ %>
-      <a href="<%- article.url %>" target="_blank" class="newsbx onHover">
-        <img src="<%- article.urlToImage %>" alt="Image" />
-        <h3><%- article.title %></h3>
+<body onload="remPlace()">
+	<div class="row m-3" id="newsType" style="color: white">
+		<h2><%=cate%></h2>
+	</div>
+	<div class="news-container">
+		<div class="news">
+			<% articles.forEach(function(article,index){ if ((typeof
+			article.url=='object') || (typeof article.title=='object') || (typeof
+			article.urlToImage=='object') || (typeof article.content=='object')){ %>
+			<% } else{ %>
+			<a
+				href="<%- article.url %>"
+				target="_blank"
+				class="newsbx onHover card card-hide card-real"
+			>
+				<img src="<%- article.urlToImage %>" alt="Image" loading="lazy" />
+				<div class="card-body">
+					<h3 class="card-title"><%- article.title %></h3>
+					<p>
+						Updated:
+						<span style="color: red"
+							><%- new Date(article.publishedAt.slice(0,10)).toDateString() %>
+							<%- moment.utc(article.publishedAt).local().format('hh : mm A') %>
+						</span>
+					</p>
 
-        <p>
-          Updated:
-          <span style="color: red"
-            ><%- new Date(article.publishedAt.slice(0,10)).toDateString() %> <%-
-            moment.utc(article.publishedAt).local().format('hh : mm A') %>
-          </span>
-        </p>
+					<p>
+						<%- article.content.replace(/<[^>]+>/g, '').substring(0,199) %><span
+							style="color: red"
+							>...Read more</span
+						>
+					</p>
+				</div>
+			</a>
+			<a
+				href=""
+				target="_blank"
+				class="newsbx onHover card-place card"
+				aria-hidden="true"
+			>
+				<img src="/load.gif" class="card-img-top" alt="" draggable="false" />
+				<div class="card-body">
+					<h3 class="card-title placeholder-glow">
+						<span class="placeholder col-6 placeholder-lg"></span>
+					</h3>
+					<p class="placeholder-glow">
+						<span class="placeholder col-3 placeholder-sm"></span>
+						<span class="placeholder col-8 placeholder-sm bg-danger"></span>
+					</p>
 
-        <p><%- article.content.replace(/<[^>]+>/g, '') %></p>
-      </a>
-      <% } %> <% }) %>
-    </div>
-  </div>
+					<p class="card-text placeholder-glow">
+						<span class="placeholder col-7"></span>
+						<span class="placeholder col-4"></span>
+						<span class="placeholder col-4"></span>
+						<span class="placeholder col-6"></span>
+						<span class="placeholder col-8"></span>
+						<span class="placeholder col-4"></span>
+						<span class="placeholder col-6"></span>
+						<span class="placeholder col-9"></span>
+					</p>
+				</div>
+			</a>
+			<% } %> <% }) %>
+		</div>
+	</div>
 
-  <%- include("bottom.ejs") %>
+	<%- include("bottom.ejs") %>
 </body>

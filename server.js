@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const path = require("path");
@@ -10,7 +11,7 @@ app.set("views", path.join(__dirname, "./html"));
 const port = process.env.PORT || 4000;
 
 http.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}`);
+	console.log(`Listening at http://localhost:${port}`);
 });
 
 app.use(express.static(__dirname + "/view"));
